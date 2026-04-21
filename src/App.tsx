@@ -35,11 +35,20 @@ function App() {
 
   return (
     <>
-      <section className="flex flex-2 gap-2 mx-auto w-7xl">
-        <Button label={`Count is: ${count}`} parentMethod={countMore}/>
-        <Button label={`Name is: ${name}`} parentMethod={changeName}/>
+      <section className="flex flex-2 gap-2 py-4 mx-auto w-7xl">
+
+        <Button parentMethod={countMore}>
+          <Button.Label label='Click me' state={count}></Button.Label>
+        </Button>
+
+        <Button parentMethod={changeName}>
+          <Button.Label label='Change my name' state={name}></Button.Label>
+        </Button>
+
       </section>
-      <section className="flex flex-2 gap-2 mx-auto w-7xl">
+      
+      <section className="flex flex-col gap-2 mx-auto w-7xl">
+        <h3 className='text-2xl font-bold'>Fetching de datos</h3>
         <ul>
           {data?.map((job: Jobs) => (
             <li key={job.id}>{job.titulo}</li>
