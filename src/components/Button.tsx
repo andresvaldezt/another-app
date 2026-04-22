@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { useGlobalContext } from "../context/global.context.tsx"
 
 interface ButtonProps {
     children: ReactNode,
@@ -11,13 +12,21 @@ interface LabelProps {
 }
 
 export function Button({children, parentMethod}: ButtonProps){
+    const { setValue } = useGlobalContext()
+
+    const handleClick = () => {
+        setValue((count) => count+2)
+        parentMethod()
+    }
+    
     return(
-        <button className="bg-blue-600 text-lg font-bold text-amber-50 rounded-md p-2 hover:bg-blue-900 active:bg-blue-500" onClick={parentMethod}>
+        <button onClick={handleClick} className="bg-blue-600 text-lg font-bold text-amber-50 rounded-md p-2 hover:bg-blue-900 active:bg-blue-500">
             {children}
         </button>
     )
 }
 
 Button.Label = function({ label, state }: LabelProps){
- return <span>{label}: {state}</span>
+    const {value} = useGlobalContext()
+    return <span>{label}: {state} : {value}</span>
 }

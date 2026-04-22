@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import './App.css'
 import { Button } from './components'
 import { useFetch } from './hooks'
+import { GlobalProvider } from './context/global.context.tsx'
 
 interface Jobs {
   id: string,
@@ -34,7 +35,7 @@ function App() {
   }
 
   return (
-    <>
+    <GlobalProvider>
       <section className="flex flex-2 gap-2 py-4 mx-auto w-7xl">
 
         <Button parentMethod={countMore}>
@@ -55,7 +56,7 @@ function App() {
           ))}
         </ul>
       </section>
-    </>
+    </GlobalProvider>
   )
 }
 
