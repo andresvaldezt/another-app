@@ -3,6 +3,7 @@ import './App.css'
 import { Button } from './components'
 import { useFetch } from './hooks'
 import { GlobalProvider } from './context/global.context.tsx'
+import { BookReader, FocusInput } from './components/UseRef'
 
 interface Jobs {
   id: string,
@@ -55,6 +56,14 @@ function App() {
             <li key={job.id}>{job.titulo}</li>
           ))}
         </ul>
+      </section>
+
+      <section className="flex flex-col gap-2 mx-auto w-7xl py-4">
+        <BookReader></BookReader>
+      </section>
+
+      <section>
+          <FocusInput></FocusInput>
       </section>
     </GlobalProvider>
   )
