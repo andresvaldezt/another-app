@@ -15,7 +15,7 @@ export const FocusInput = () => {
 
     return(
         <div>
-            <input className="border-2 border-solid mx-4" ref={InputRef} type="text" placeholder="Escribe algo aquí..."/>
+            <input className="border-2 border-solid rounded-md mx-2 p-1" ref={InputRef} type="text" placeholder="Escribe algo aquí..."/>
             <button className={buttonStyles} onClick={handleButtonClick}>Enfocar en el Input</button>
         </div>
     )

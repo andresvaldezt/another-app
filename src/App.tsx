@@ -1,9 +1,8 @@
 import { useState} from 'react'
 import './App.css'
-import { Button } from './components'
+import { Button, BookReader, FocusInput, ShoppingCart } from './components'
 import { useFetch } from './hooks'
 import { GlobalProvider } from './context/global.context.tsx'
-import { BookReader, FocusInput } from './components/UseRef'
 
 interface Jobs {
   id: string,
@@ -62,8 +61,12 @@ function App() {
         <BookReader></BookReader>
       </section>
 
-      <section>
+      <section className="flex flex-col gap-2 mx-auto w-7xl py-4">
           <FocusInput></FocusInput>
+      </section>
+
+      <section className="flex flex-col gap-2 mx-auto w-7xl py-4">
+          <ShoppingCart></ShoppingCart>
       </section>
     </GlobalProvider>
   )
