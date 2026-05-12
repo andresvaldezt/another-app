@@ -20,6 +20,14 @@ function App() {
 
   const { data, error, loading} = useFetch<Jobs[]>(url)
 
+  const gato = {
+    nombre: 'Miumiu',
+    color: 'gris',
+    test: {
+
+    }
+  }
+
   const openModal = () => {
     setState(true)
   }
@@ -85,9 +93,12 @@ function App() {
         </Modal>
 
       <section className="flex flex-col gap-2 mx-auto w-7xl py-4">
-        <button onClick={openModal} className='bg-blue-600 text-lg font-bold text-amber-50 rounded-md p-2 hover:bg-blue-900 active:bg-blue-500 mr-2'>
-          Abrir Modal
-        </button>
+        <div>
+          <button onClick={openModal} className='bg-blue-600 text-lg font-bold text-amber-50 rounded-md p-2 hover:bg-blue-900 active:bg-blue-500 mr-2'>
+            Abrir Modal 
+            {/* {gato.test.hijo.nombre} */}
+          </button>
+        </div>
       </section>
     </GlobalProvider>
   )

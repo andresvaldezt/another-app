@@ -19,7 +19,7 @@ interface ContactProps {
 const buttonStyles = 'bg-blue-600 text-lg font-bold text-amber-50 rounded-md p-2 hover:bg-blue-900 active:bg-blue-500 mr-2'
 
 const ContactCard = memo(({ contact, onCall }: ContactProps) => {
-    console.log(`Renderizando contacto ${contact.name}`)
+    //console.log(`Renderizando contacto ${contact.name}`)
 
 
     return(
