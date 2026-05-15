@@ -2,7 +2,6 @@ import {useState} from 'react'
 import './App.css'
 import { Button, BookReader, FocusInput, ShoppingCart, PhoneBook, Modal } from './components'
 //import { useFetch } from './hooks'
-import { GlobalProvider } from './context/global.context.tsx'
 import { useModalContext } from './components/Modal/context/ModalContext.tsx'
 import { getCharacter } from './services'
 import { type Character } from './models'
@@ -54,13 +53,14 @@ function App() {
   }
 
   return (
-    <GlobalProvider>
+    <>
       <section className="flex flex-2 gap-2 py-4 mx-auto w-7xl">
         {JSON.stringify(data?.name)}
         <button onClick={fetch} className='bg-blue-600 text-lg font-bold text-amber-50 rounded-md p-2 hover:bg-blue-900 active:bg-blue-500 mr-2'>
           Fetch
         </button>
       </section>
+      
       <section className="flex flex-2 gap-2 py-4 mx-auto w-7xl">
 
         <Button parentMethod={countMore}>
@@ -111,7 +111,7 @@ function App() {
           </button>
         </div>
       </section>
-    </GlobalProvider>
+    </>
   )
 }
 
